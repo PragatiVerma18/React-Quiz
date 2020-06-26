@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import logo from "./logo.svg";
+import Question from "./Components/Question";
+class App extends Component {
+  constructor(props) {
+    super(props);
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    this.state = {
+      counter: 0,
+      questionId: 1,
+      question: "",
+      answerOptions: [],
+      answer: "",
+      answersCount: {},
+      result: "",
+    };
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <div className="App-header">
+          <img
+            src="https://media.giphy.com/media/YqukXc3tzSUoL4bgQg/giphy.gif"
+            className="App-logo"
+            alt="logo"
+          />
+        </div>
+        <h1>React Quiz</h1>
+        <Question content="What is your favourite food?" />
+      </div>
+    );
+  }
 }
 
 export default App;
